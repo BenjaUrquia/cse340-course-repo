@@ -18,7 +18,8 @@ const showProjectDetailsPage = async (req, res) => {
   const projectDetails = await getProjectDetails(id);
 
   res.render('project', { title: projectDetails.title, project: projectDetails });
-} 
+};
 
-export { showProjectsPage };
-export { showProjectDetailsPage };
+
+
+export { showProjectsPage, showProjectDetailsPage };
