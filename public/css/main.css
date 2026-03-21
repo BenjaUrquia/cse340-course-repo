@@ -67,9 +67,9 @@ nav a:focus {
 
 main {
     flex: 1;
-    padding: 1.5rem;
-    max-width: 1000px;
-    margin: auto;
+    padding: 2rem 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 h1 {
@@ -84,12 +84,36 @@ h2 {
     color: var(--secondary);
 }
 
+main a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
 main ul {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+    background: none;
+    border: none;
+}
+
+main li {
     background: var(--light);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 1rem;
-    list-style: disc inside;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+main li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 /* ===============================

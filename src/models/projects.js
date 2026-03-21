@@ -88,4 +88,22 @@ const getProjectsByOrganizationId = async (organizationId) => {
       return result.rows;
 };
 
-export { getAllProjects, getProjectDetails, getUpcomingProjects, getProjectsByOrganizationId }
+const getProjectsByCategoryId = async (categoryId) => {
+    const query = `
+        SELECT 
+            sp.project_id,
+            sp.title
+        FROM public.service_project_category spc
+
+        JOIN public.service_project sp
+        ON spc.project_id = sp.project_id
+
+        WHERE spc.category_id = $1;
+    `;
+
+    const result = await db.query(query, [categoryId]);
+
+    return result.rows;
+};
+
+export { getAllProjects, getProjectDetails, getUpcomingProjects, getProjectsByOrganizationId, getProjectsByCategoryId }

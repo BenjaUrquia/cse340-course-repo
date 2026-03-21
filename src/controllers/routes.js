@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { showCategoriesPage } from './categories.js';
+import { showCategoriesPage , showCategoryDetailsPage} from './categories.js';
 import { showHomePage } from './index.js';
 import { showOrganizationsPage, showOrganizationDetailsPage  } from './organizations.js';
 import { showProjectsPage, showProjectDetailsPage } from './project.js';
@@ -14,6 +14,7 @@ router.get('/organizations', showOrganizationsPage );
 router.get('/projects', showProjectsPage);
 router.get('/organization/:id', showOrganizationDetailsPage);
 router.get('/project/:id', showProjectDetailsPage);
+router.get('/category/:id', showCategoryDetailsPage );
 
 // Test route for 500 errors
 router.get('/test-error', testErrorPage);
