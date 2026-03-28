@@ -1,6 +1,15 @@
 import express from 'express';
 
-import { showCategoriesPage , showCategoryDetailsPage, showAssignCategoriesForm, processAssignCategoriesForm } from './categories.js';
+import { showCategoriesPage,
+    showCategoryDetailsPage,
+    showAssignCategoriesForm,
+    processAssignCategoriesForm,
+    showNewCategoryForm,
+    categoryValidation,
+    processNewCategoryForm,
+    showEditCategoryForm,
+    processEditCategoryForm
+} from './categories.js';
 import { showHomePage } from './index.js';
 import { 
     showOrganizationsPage,
@@ -11,7 +20,15 @@ import {
     showEditOrganizationForm,
     processEditOrganizationForm 
 } from './organizations.js';
-import { showProjectsPage, showProjectDetailsPage, showNewProjectForm, processNewProjectForm, projectValidation, showEditProjectForm, processEditProjectForm } from './project.js';
+import {
+    showProjectsPage, 
+    showProjectDetailsPage, 
+    showNewProjectForm, 
+    processNewProjectForm, 
+    projectValidation, 
+    showEditProjectForm, 
+    processEditProjectForm 
+} from './project.js';
 import { testErrorPage } from './errors.js';
 
 const router = express.Router();
@@ -35,6 +52,10 @@ router.post('/assign-categories/:projectId', processAssignCategoriesForm);
 router.get('/edit-project/:id', showEditProjectForm);
 router.post('/edit-project/:id', projectValidation, processEditProjectForm);
 
+router.get('/new-category', showNewCategoryForm);
+router.post('/new-category', categoryValidation, processNewCategoryForm);
+router.get('/edit-category/:id', showEditCategoryForm);
+router.post('/edit-category/:id', categoryValidation, processEditCategoryForm);
 
 // Test route for 500 errors
 router.get('/test-error', testErrorPage);
