@@ -147,6 +147,74 @@ main li:hover {
     border-color: #bee5eb;
 }
 
+/* ===============================
+   FORMS
+================================ */
+
+form {
+    background: var(--light);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    font-size: 0.95rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--secondary);
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+
+button,
+.btn {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+    background: #226c54;
+}
+
+.btn-secondary {
+    background: var(--accent);
+    color: #222;
+}
+
+.btn-secondary:hover {
+    background: #d99c1c;
+}
 
 /* ===============================
    Footer
