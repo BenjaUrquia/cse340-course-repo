@@ -116,6 +116,13 @@ main li:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
+.form-group div {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
 /* ===============================
    Flash message styles 
 ================================ */

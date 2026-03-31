@@ -96,4 +96,12 @@ const updateCategory = async (categoryId, name) => {
     return result.rows[0].category_id;
 };
 
-export { getAllCategories, getCategoryById , getCategoryByProject, assignCategoryToProject, updateCategoryAssignments, createCategory, updateCategory }
+export { 
+    getAllCategories, 
+    getCategoryById , 
+    getCategoryByProject, 
+    assignCategoryToProject, 
+    updateCategoryAssignments, 
+    createCategory, 
+    updateCategory 
+}

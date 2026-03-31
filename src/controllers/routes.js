@@ -43,7 +43,6 @@ router.get('/category/:id', showCategoryDetailsPage );
 router.get('/new-organization', showNewOrganizationForm);
 router.post('/new-organization', organizationValidation, processNewOrganizationForm);
 router.get('/edit-organization/:id', showEditOrganizationForm);
-router.post('/edit-organization/:id', processEditOrganizationForm);
 router.post('/edit-organization/:id', organizationValidation, processEditOrganizationForm);
 router.get('/new-project', showNewProjectForm);
 router.post('/new-project', projectValidation, processNewProjectForm);
