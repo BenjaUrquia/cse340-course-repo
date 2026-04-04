@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+
+<main>
+    <h1><%= title %></h1>
+
+    <ul>
+        <h2>Admin</h2>
+        <% users.forEach(user => { %>
+            <% if (user.role_id == 2) { %>
+                <li>
+                    <strong><%= user.name %></strong> -
+                    <%= user.email %>
+                </li>
+            <% } %>
+        <% }) %>
+    </ul>
+
+    <ul>
+        <h2>Common Users</h2>
+        <% users.forEach(user => { %>
+            <% if (user.role_id == 1) { %>
+                <li>
+                    <strong><%= user.name %></strong> -
+                    <%= user.email %>
+                </li>
+            <% } %>
+        <% }) %>
+    </ul>
+
+</main>
+
+<%- include('partials/footer') %>

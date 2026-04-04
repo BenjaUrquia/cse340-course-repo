@@ -66,4 +66,15 @@ const authenticateUser = async (email, password) => {
     return user;
 };
 
-export { createUser, authenticateUser };
+const getAllUsers = async () => {
+    const query = `
+        SELECT user_id, name, email, role_id
+        FROM public.users
+        ORDER BY name;
+    `;
+
+    const result = await db.query(query);
+    return result.rows;
+};
+
+export { createUser, authenticateUser, getAllUsers };

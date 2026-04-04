@@ -17,9 +17,13 @@
         <% }) %>
     </ul>
     <% if (user && user.role_name === 'admin') { %>
-        <p>
-            <a href="/new-category">+ Add New Category</a>
-        </p>
+        <ul>
+            <li>
+                <p>
+                    <a class="btn" href="/new-category">+ Add New Category</a>
+                </p>
+            </li>
+        </ul>
      <% } %>
 </main>
 

@@ -11,7 +11,12 @@
         </ul>
 
         <% if (user && user.role_name === 'admin') { %>
-            <p><a href="/new-organization">Add New Organization</a></p>
+            <ul>
+                <li>
+                    <p><a class="btn" href="/new-organization">Add New Organization</a></p>
+                </li>
+            </ul>
+            
         <% } %>
 
     </main>

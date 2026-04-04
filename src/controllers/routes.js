@@ -38,7 +38,8 @@ import {
     processLogout,
     requireLogin,
     showDashboard,
-    requireRole 
+    requireRole,
+    showUsersPage
 } from './users.js'
 
 
@@ -78,6 +79,8 @@ router.post('/login', processLoginForm);
 router.get('/logout', processLogout);
 
 router.get('/dashboard', requireLogin, showDashboard);
+
+router.get('/users', requireLogin, requireRole('admin'), showUsersPage);
 
 // Test route for 500 errors
 router.get('/test-error', testErrorPage);

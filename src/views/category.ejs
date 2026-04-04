@@ -12,10 +12,13 @@
             </li>
         <% }) %>
     </ul>
+    
     <% if (user && user.role_name === 'admin') { %>
-        <a href="/edit-category/<%= category.category_id %>">
-            Edit
-        </a>
+        <ul>
+            <li>
+                <a class="btn" href="/edit-category/<%= category.category_id %>">Edit</a>
+            </li>
+        </ul>
     <% } %>
 </main>
 
