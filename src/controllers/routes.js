@@ -39,7 +39,9 @@ import {
     requireLogin,
     showDashboard,
     requireRole,
-    showUsersPage
+    showUsersPage,
+    volunteerForProject,
+    unvolunteerFromProject
 } from './users.js'
 
 
@@ -81,6 +83,9 @@ router.get('/logout', processLogout);
 router.get('/dashboard', requireLogin, showDashboard);
 
 router.get('/users', requireLogin, requireRole('admin'), showUsersPage);
+
+router.post('/project/:id/volunteer', requireLogin, volunteerForProject);
+router.post('/project/:id/unvolunteer', requireLogin, unvolunteerFromProject);
 
 // Test route for 500 errors
 router.get('/test-error', testErrorPage);

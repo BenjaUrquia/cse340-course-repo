@@ -14,6 +14,24 @@
             </li>
         </ul>
     <% } %>
+
+    <h2>Your Volunteer Projects</h2>
+
+    <% if (projects.length === 0) { %>
+        <p>You are not volunteering for any projects yet.</p>
+    <% } %>
+    
+    <ul>
+        <% projects.forEach(p => { %>
+            <li>
+                <%= p.title %>
+
+                <form action="/project/<%= p.project_id %>/unvolunteer" method="POST">
+                    <button type="submit">Remove</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
 </main>
 
 <%- include('partials/footer') %>
